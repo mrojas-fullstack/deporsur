@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import facebook from '../assets/facebook.svg';  
+import instagram from '../assets/instagram.svg';  
+import tiktok from '../assets/tiktok.svg';
+---
+
+<footer id="contacto" class="w-full bg-transparent flex items-end justify-around px-20 py-10 max-md:flex-col max-md:gap-8 max-md:items-center">
+  <div class="flex items-center gap-2">
+    <Image src={facebook} alt="facebook" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="lazy" decoding="async"/>
+    <Image src={instagram} alt="instagram" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="lazy" decoding="async"/>
+    <Image src={tiktok} alt="tiktok" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="lazy" decoding="async"/>
+  </div>
+  <div class="flex items-center justify-berween gap-2 text-center max-md:flex-col max-md:items-center">
+    <div class="flex flex-col items-center gap-2 w-65">
+      <p class="font-[Montserrat] font-light">
+        Lugar:
+      </p>
+      <p class="font-[Montserrat] font-bold">
+        Estadio el Hueco de Pampas San Juan de Miraflores
+      </p>
+    </div>
+    <div class="flex flex-col items-center gap-2 w-35">
+      <p class="font-[Montserrat] font-light">
+        Inscripciones:
+      </p>
+      <p class="font-[Montserrat] font-bold">
+        +51 903 547 106 
+        +51 925 570 355
+      </p>
+    </div>
+  </div>
+</footer>

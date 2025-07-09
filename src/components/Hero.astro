@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+import background from '../assets/background.webp';
+import logoArena from '../assets/logo-arena.png';
+import facebook from '../assets/facebook.svg';  
+import instagram from '../assets/instagram.svg';  
+import tiktok from '../assets/tiktok.svg';  
+---
+
+<section class="h-full">
+  <img class="fixed top-0 left-0 w-full h-full -z-1 blur-3xl" src={background.src} alt="" fetchpriority="high" />
+  <div class="flex items-center justify-between max-w-6xl mx-auto w-full max-md:flex-col">
+    <Image src={logoArena} alt="Arena Cup" class="w-120 h-120 max-lg:w-100 max-lg:h-100 max-md:w-90 max-md:h-90 max-md:-mb-8 mb-4 animate-(--animate-fadein)" priority/>
+    <div class="flex flex-col items-start justify-center gap-4 max-md:w-full w-1/2 max-md:px-8 px-6">
+      <h2 id="profession" class="font-[Caveat] font-bold text-5xl">Torneo de Menores</h2>
+      <h1 id="name" class="font-bold text-6xl max-md:pb-4">Copa Arena Cup</h1>
+      <p class="font-[Montserrat] font-light]">
+        Nos vemos este <strong>17 de agosto</strong> en el campo el Hueco de pampas de San Juan, 
+        para vivir juntos una experiencia única que combina formación y competencia.
+      </p>
+      <p class="font-[Montserrat] font-light]">
+        Modalidades y categorías:
+        <br></br>
+        <strong>Fútbol 11 - 2012 y 2010</strong>
+        <br></br>
+        Premios para el 1ero y 2do puesto, mejor jugador, mejor arquero.
+      </p>
+    </div>
+  </div>
+  <div class="w-full bg-transparent flex items-end justify-around px-20 py-5 pb-20 max-md:flex-col max-md:gap-8 max-md:items-center">
+    <div class="flex items-center gap-2">
+      <Image src={facebook} alt="facebook" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="eager" decoding="async"/>
+      <Image src={instagram} alt="instagram" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="eager" decoding="async"/>
+      <Image src={tiktok} alt="tiktok" class="w-10 h-10 invert-100 bg-transparent transition duration-300 ease-in-out cursor-pointer" loading="eager" decoding="async"/>
+    </div>
+    <div class="flex items-center justify-berween gap-2 text-center max-md:flex-col max-md:items-center">
+      <div class="flex flex-col items-center gap-2 w-65">
+        <p class="font-[Montserrat] font-light">
+          Lugar:
+        </p>
+        <p id="description" class="font-[Montserrat] font-bold">
+          Estadio el Hueco de Pampas San Juan de Miraflores
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-2 w-35">
+        <p class="font-[Montserrat] font-light">
+          Inscripciones:
+        </p>
+        <p id="description" class="font-[Montserrat] font-bold">
+          +51 903 547 106 
+          +51 925 570 355
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import gsap from "gsap";
+  import { SplitText } from "gsap/all";
+
+  gsap.registerPlugin(SplitText);
+
+  let splitWords = SplitText.create("#profession", { type: "words" });
+  let splitChars = SplitText.create("#name", { type: "words" });
+  let splitLines = SplitText.create("#description", { type: "words", aria: "hidden" });
+
+  document.fonts.ready.then(() => {
+    gsap.from(splitWords.words, {
+      y: -100,
+      opacity: 0,
+      rotation: "random(-80, 80)",
+      duration: 0.7, 
+      ease: "back",
+      stagger: 0.15
+    });
+
+    gsap.from(splitChars.words, {
+      x: 150,
+      opacity: 0,
+      duration: 0.7, 
+      ease: "power4",
+      stagger: 0.04
+    })
+
+    gsap.from(splitLines.words, {
+      opacity: 0,
+      duration: 2,
+      ease: "sine.out",
+      stagger: 0.1,
+    });
+  });
+</script>
