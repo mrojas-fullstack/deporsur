@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import { AUSPICIOS } from "../constants/auspicios";
+
+---
+
+<section class="flex flex-col justify-center items-center gap-4">
+  <h2 class="text-4xl font-bold text-center">Auspicios</h2>
+  <div class="flex flex-wrap justify-center items-center gap-4 p-8 max-w-4xl">
+  {AUSPICIOS.map((auspicio) => (
+    <a href="/" target="_blank" rel="noopener noreferrer" class="w-64 h-64 rounded-full">
+      <Image src={auspicio.image} alt={auspicio.name} class="w-full h-full object-contain rounded-2xl" />
+    </a>
+  ))}
+  </div>  
+</section>

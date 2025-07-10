@@ -12,20 +12,16 @@ const { pathname } = Astro.url;
       </a>
       <ul class="flex items-center space-x-4">
         <li 
-          class="py-1 px-2 rounded-xl hover:bg-[var(--secondary-color)]" 
-          aria-current={pathname.slice(1) === '' ? 'page' : 'false'}
+          class="py-1 px-2 rounded-xl hover:bg-[var(--secondary-color)]"
         ><a href="/">TORNEOS</a></li>
         <li 
           class="py-1 px-2 rounded-xl hover:bg-[var(--secondary-color)]"
-          aria-current={pathname.slice(1) === 'about' ? 'page' : 'false'}
-        ><a href="#galeria" transition:name="gallery">FOTOS Y VIDEOS</a></li>
+        ><a href="#galeria">FOTOS Y VIDEOS</a></li>
         <li 
           class="py-1 px-2 rounded-xl hover:bg-[var(--secondary-color)]"
-          aria-current={pathname.slice(1) === 'projects' ? 'page' : 'false'}
         ><a href="#auspicios">AUSPICIOS</a></li>
         <li 
           class="py-1 px-2 rounded-xl hover:bg-[var(--secondary-color)]"
-          aria-current={pathname.slice(1) === 'contact' ? 'page' : 'false'}
         ><a href="#contacto">CONTACTO</a></li>
       </ul>
     </div>
@@ -36,9 +32,3 @@ const { pathname } = Astro.url;
     </a>
   </div>
 </header>
-
-<style>
-  li[aria-current="page"] {
-    background-image: linear-gradient(var(--bg-button-1));
-  }
-</style>
