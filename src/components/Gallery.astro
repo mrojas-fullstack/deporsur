@@ -5,21 +5,21 @@ import { GALLERY } from "../constants/gallery";
 
 <section id="galeria" class="h-full flex flex-col items-center justify-center gap-10 pb-20">
   <div class="flex flex-col items-center justify-center h-full">
-    {GALLERY.sub13.map((item) => (
+    {GALLERY.sub13.map((item, j) => (
       <h2 class="text-4xl font-bold text-center mb-8">{item.title}</h2>
       <div class="flex flex-wrap justify-center gap-4">
         {item.images.map((image, i) => (
-          <Image src={image} alt={`${item.title}-${i}`} class={`w-100 rounded-xl sub13-${i + 1}`} gallery-img-sub13/>
+          <Image src={image} alt={`${item.title}-${i}`} class={`w-100 rounded-xl sub13-${6*j + (i + 1)}`} gallery-img-sub13/>
         ))}
       </div>
     ))}
   </div>
   <div class="flex flex-col items-center justify-center h-full">
-    {GALLERY.sub15.map((item) => (
-      <h2 class="text-4xl font-bold text-center mb-8">{item.title}</h2>
+    {GALLERY.sub15.map((item, j) => (
+      <h2 class="text-4xl font-bold text-center mt-8 mb-8">{item.title}</h2>
       <div class="flex flex-wrap justify-center gap-4">
         {item.images.map((image, i) => (
-          <Image src={image} alt={`${item.title}-${i}`} class={`w-100 rounded-xl sub15-${i + 1}`} gallery-img-sub15/>
+          <Image src={image} alt={`${item.title}-${i}`} class={`w-100 rounded-xl sub15-${6*j + (i + 1)}`} gallery-img-sub15/>
         ))}
       </div>
     ))}

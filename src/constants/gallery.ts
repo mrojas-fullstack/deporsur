@@ -12,6 +12,13 @@ import Sch274 from '../assets/gallery/sub15/27-sch/sch-27-4.webp';
 import Sch275 from '../assets/gallery/sub15/27-sch/sch-27-5.webp';
 import Sch276 from '../assets/gallery/sub15/27-sch/sch-27-6.webp';
 
+import SchEfar1 from '../assets/gallery/sub15/efar-sch/sch-efar-1.webp';
+import SchEfar2 from '../assets/gallery/sub15/efar-sch/sch-efar-2.webp';
+import SchEfar3 from '../assets/gallery/sub15/efar-sch/sch-efar-3.webp';
+import SchEfar4 from '../assets/gallery/sub15/efar-sch/sch-efar-4.webp';
+import SchEfar5 from '../assets/gallery/sub15/efar-sch/sch-efar-5.webp';
+import SchEfar6 from '../assets/gallery/sub15/efar-sch/sch-efar-6.webp';
+
 export const GALLERY = {
   sub13: [
     {
@@ -27,6 +34,17 @@ export const GALLERY = {
     }
   ],
   sub15: [
+    {
+      title: 'Chalhuanca vs EFAR',
+      images: [
+        SchEfar1,
+        SchEfar2,
+        SchEfar3,
+        SchEfar4,
+        SchEfar5,
+        SchEfar6,
+      ],
+    },
     {
       title: 'Chalhuanca vs La 27',
       images: [
